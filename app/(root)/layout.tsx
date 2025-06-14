@@ -1,13 +1,15 @@
 import React from 'react';
 import Navbar from '@/app/components/Navbar';
-import "../globals.css"
+import workSans from '../fonts';
+import "../globals.css";
+
 
 export default async function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="font-work-sans">
+      <body className={workSans.variable}>
         <Navbar />
         <main>{children}</main>
       </body>
