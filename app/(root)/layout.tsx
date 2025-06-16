@@ -8,11 +8,11 @@ export default async function Layout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={workSans.variable}>
+    
+      <main className={workSans.variable}>
         <Navbar />
-        <main>{children}</main>
-      </body>
-    </html>
+        {children}
+      </main>
+     
   );
 }
