@@ -7,12 +7,12 @@ import { sanityFetch, SanityLive } from '@/sanity/lib/live';
 
 
 export default async function page({searchParams}:{
-  searchParams : {query?: string}
+  searchParams : Promise<{query?: string}>
 }) {
 
-  const query =  searchParams.query 
+  const query =  (await searchParams).query 
   const params = { search: query?.toLowerCase() || null }
-  // const posts = await client.fetch(STARTUP_QUERY);
+
 
   const {data: posts } = await sanityFetch({query: STARTUP_QUERY,params})
   return (
