@@ -6,5 +6,6 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: false, 
+  // ab true kr doiya taaki ab vo cache karey cheeze like last time isliye false kiya deikhane ke liye
+  useCdn: true, 
 })

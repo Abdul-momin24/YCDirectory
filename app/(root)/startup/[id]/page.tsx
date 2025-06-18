@@ -24,6 +24,8 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
   const parseContent = md.render(post?.pitch || '');
 
+  const { views } = await client.withConfig({ useCdn: false }).fetch(STARTUP_BY_UD_QUERY, { id });
+
   return (
     <>
       <section className="pink_container !min-h-[230px]">
@@ -82,7 +84,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
         {/* Suspense removed to prevent runtime errors for now */}
 
         <Suspense fallback={<Skeleton className='view_skeleton'/>}>
-          <View id = {id}/>
+          <View id = {id} views={views}/>
         </Suspense>
       </section>
     </>
