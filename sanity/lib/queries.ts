@@ -52,3 +52,14 @@ export const STARTUP_BY_UD_QUERY = defineQuery(`
 export const STARTUP_VIEWS_QUERY = defineQuery(`*[_type == "startup" && _id == $id][0]{
   _id,
   views}`)
+
+
+// here problem was with _id do this carefully otherwise problem will occur 
+export const Author_BY_GITHUB_ID_QUERY = defineQuery(`*[_type=="author" && _id == $id][0]{
+  _id,
+  id,
+  name,
+  username,
+  email,
+  image,
+  bio}`)
