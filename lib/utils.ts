@@ -13,3 +13,4 @@ export function formatData(date: string) {
     year: 'numeric',
   });
 }
+

@@ -1,4 +1,4 @@
-// No 'use client'
+
 import { auth, signIn, signOut } from '@/auth'; // ensure signOut works server-side or remove it
 import Link from 'next/link';
 import React from 'react';
