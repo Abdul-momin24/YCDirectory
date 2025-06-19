@@ -29,6 +29,7 @@ export const startup = defineType({
     defineField({
       name: "views",
       type: "number",
+      initialValue: 0,
     }),
     defineField({
       name: "category",
