@@ -11,6 +11,7 @@ type ViewProps = {
 const View = ({ id, views }: ViewProps) => {
   const [displayedViews, setDisplayedViews] = useState(views); // ✅ Store in state
 
+  console.log('id', id);
   useEffect(() => {
     const updateViews = async () => {
       try {

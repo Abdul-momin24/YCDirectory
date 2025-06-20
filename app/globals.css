@@ -49,7 +49,8 @@
     }
 
     .pink_container {
-        @apply w-full bg-primary min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
+        @apply w-full min-h-[530px] pattern flex justify-center items-center flex-col py-10 px-6;
+        
     }
 
     .tag {
@@ -199,23 +200,24 @@
         @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-full;
     }
 
-    .pattern {
-        background-image: linear-gradient(
-                to right,
-                transparent 49.5%,
-                rgba(251, 232, 67, 0.2) 49.5%,
-                rgba(251, 232, 67, 0.6) 50.5%,
-                transparent 50.5%
-        );
-        background-size: 5% 100%;
-        background-position: center;
-        background-repeat: repeat-x;
-    }
-
-    .tag-tri {
-        @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
-    }
+.pattern {
+    background-image:
+        linear-gradient(to right,
+            transparent 48%,
+            rgba(251, 232, 67, 0.2) 48%,
+            rgba(251, 232, 67, 0.5) 52%,
+            transparent 49%),
+        linear-gradient(#EE2B69, #EE2B69);
+    /* solid pink background */
+    background-size: 40px 100%, 100% 100%;
+    background-repeat: repeat-x, no-repeat;
+    background-position: top left, center;
 }
+
+        .tag-tri {
+            @apply before:content-[''] before:absolute before:top-2 before:left-2 before:border-t-[10px] before:border-t-black before:border-r-[10px] before:border-r-transparent after:content-[''] after:absolute after:bottom-2 after:right-2 after:border-b-[10px] after:border-b-black after:border-l-[10px] after:border-l-transparent;
+        }
+    }
 
 .w-md-editor-toolbar {
     padding: 10px !important;
