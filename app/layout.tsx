@@ -3,7 +3,7 @@ import './globals.css'
 import workSans from './fonts'
 import "easymde/dist/easymde.min.css"
 import { Toaster } from '@/components/ui/toaster'
-import Head from 'next/head'
+
 
 export const metadata: Metadata = {
   title: 'YC Directory',
