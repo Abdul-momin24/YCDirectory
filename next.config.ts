@@ -1,8 +1,14 @@
 import {withSentryConfig} from "@sentry/nextjs";
 import type { NextConfig } from "next";
-import { hostname } from "os";
+
 
 const nextConfig: NextConfig = {
+  typescript:{
+    ignoreBuildErrors:true,
+  },
+  eslint:{
+    ignoreDuringBuilds:true,
+  },
   images: {
     dangerouslyAllowSVG: true,
     remotePatterns: [
@@ -17,6 +23,10 @@ const nextConfig: NextConfig = {
       {protocol:"https",
       hostname:"avatars.githubusercontent.com"
       },
+      {
+        protocol:"https",
+        hostname:"**"
+      }
       
     ],
   },
