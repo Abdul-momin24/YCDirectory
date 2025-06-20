@@ -10,6 +10,7 @@
     }
 }
 
+  
 @layer utilities {
     .flex-between {
         @apply flex justify-between items-center;
@@ -187,7 +188,7 @@
 
     /* view */
     .view-container {
-        @apply flex justify-end items-center mt-5 fixed bottom-3 right-3;
+        @apply flex justify-end items-center mt-5 fixed bottom-20 right-3;
     }
 
     .view-text {

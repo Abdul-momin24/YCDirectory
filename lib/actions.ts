@@ -42,7 +42,6 @@ export const createPitch = async (
       pitch,
       views:0
     };
-    console.log(session)
     const result = await getWriteClient().create({ _type: "startup", ...startup });
 
     return parseServerActionResponse({
@@ -51,7 +50,6 @@ export const createPitch = async (
       status: "SUCCESS",
     });
   } catch (error) {
-    console.log(error);
 
     return parseServerActionResponse({
       error: JSON.stringify(error),

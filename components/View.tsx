@@ -23,7 +23,6 @@ const View = ({ id, views }: ViewProps) => {
         });
 
         const data = await res.json();
-        console.log(data);
 
         if (data?.views !== undefined) {
           setDisplayedViews(data.views); // ✅ Proper state update
@@ -38,7 +37,7 @@ const View = ({ id, views }: ViewProps) => {
 
   return (
     <div className="view-container">
-      <div className="absolute -top-2 -right-2">
+      <div className="absolute -top-3 -right-2">
         <Ping />
       </div>
       <p className="view-text">

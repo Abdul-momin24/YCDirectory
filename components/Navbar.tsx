@@ -37,7 +37,7 @@ export default async function Navbar() {
                 </form>
               </div>
 
-              <Link href={`/user/${session.user.id}`}>
+              <Link href={`/user/${session?.user?._id}`}>
                 <Avatar className="size-10">
                   <AvatarImage
                     src={session?.user?.image || ''}

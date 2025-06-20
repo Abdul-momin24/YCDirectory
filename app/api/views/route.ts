@@ -8,7 +8,6 @@ export async function POST(req: Request) {
     const writeClient = getWriteClient();
 
     const updatedDoc = await writeClient.patch(id).inc({views:1}).commit();
-    console.log(updatedDoc)
     return NextResponse.json({ success: true, views: updatedDoc.views });
 
   } catch (err) {
