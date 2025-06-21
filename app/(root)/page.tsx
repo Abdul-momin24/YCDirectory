@@ -17,37 +17,37 @@ export default async function page({searchParams}:{
 
   const {data: posts } = await sanityFetch({query: STARTUP_QUERY,params})
   return (
-    <>
-    <section className='pink_container'>
-      <h1 className='heading'>
-        Pitch Your Startup, <br/>
-        connect with Entrepeneurs
-      </h1>
+     <>
+      <section className='pink_container'>
+        <h1 className='heading'>
+          Pitch Your Startup, <br />
+          connect with Entrepreneurs
+        </h1>
 
-    <p className='sub-heading !max-w-3xl'>
-      Submit Ideas, Vote on Pitches and get Noticed in Virtual
-    </p>
-    
-    <SearchForm query={query}/>
-    </section>
+        <p className='sub-heading !max-w-3xl'>
+          Submit Ideas, Vote on Pitches and get Noticed in Virtual
+        </p>
 
-    <div className="section_container">
-      <p className='text-30-semibold'>
-        {query ?  `Search results for the ${query}`: "All Startups"}
-      </p>
+        <SearchForm query={query} />
+      </section>
 
+      <div className='section_container'>
+        <p className='text-30-semibold'>
+          {query ? `Search results for "${query}"` : 'All Startups'}
+        </p>
 
-      <ul className='mt-7 card_grid'>
-        {posts?.length > 0 ?(
-          posts.map((post:StartupCardType, index:number)=>(<StartupCard key={post?._id} post={post}/>))
-        ):(
-          <p className='no-results'>No startup found</p>
-        )}
-      </ul>
-    </div>
+        <ul className='mt-7 card_grid'>
+          {posts?.length > 0 ? (
+            posts.map((post: StartupCardType, index: number) => (
+              <StartupCard key={post?._id || index} post={post} />
+            ))
+          ) : (
+            <li className='no-results'>No startup found</li>
+          )}
+        </ul>
+      </div>
 
-        <SanityLive/>
-
+      <SanityLive />
     </>
   )
 }

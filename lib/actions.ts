@@ -3,6 +3,7 @@
 import { auth } from "@/auth";
 import { parseServerActionResponse } from "@/lib/utils";
 import { getWriteClient } from "@/sanity/lib/WriteClient";
+import { revalidatePath } from "next/cache";
 import slugify from "slugify";
 
 export const createPitch = async (
@@ -43,7 +44,8 @@ export const createPitch = async (
       views:0
     };
     const result = await getWriteClient().create({ _type: "startup", ...startup });
-
+    revalidatePath("/")
+    revalidatePath(`/user/${session?.user?._id}`)
     return parseServerActionResponse({
       ...result,
       error: "",

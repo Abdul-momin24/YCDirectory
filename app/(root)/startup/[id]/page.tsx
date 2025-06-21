@@ -32,7 +32,8 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
 
   const parseContent = md.render(post?.pitch || '');
 
-  const { views } = await client.withConfig({ useCdn: false }).fetch(STARTUP_BY_UD_QUERY, { id });
+  const views = await client.withConfig({ useCdn: false })
+  .fetch(`*[_type == "startup" && _id == $id][0].views`, { id });
 
   return (
     <>
